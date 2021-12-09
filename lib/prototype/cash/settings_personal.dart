@@ -20,14 +20,6 @@ class SettingsPersonalScreen extends StatelessWidget {
                 child: Image.asset('assets/images/profile.jpeg',
                     width: 128, height: 128),
               ),
-              Container(
-                alignment: Alignment.topCenter,
-                child: SizedBox(
-                    width: double.infinity,
-                    child: TextButton(
-                        child: const Text('Change Picture'),
-                        onPressed: () => {})),
-              )
             ],
           ),
           const Divider(),
