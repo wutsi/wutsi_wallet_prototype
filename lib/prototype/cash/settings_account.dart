@@ -6,7 +6,7 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
-import 'package:wutsi_mobile/prototype/widget/money.dart';
+import '../widget/money.dart';
 
 class SettingsAccountScreen extends StatelessWidget {
   const SettingsAccountScreen({Key? key}) : super(key: key);

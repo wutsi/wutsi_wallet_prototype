@@ -7,8 +7,8 @@ import 'package:flutter/widgets.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:share_plus/share_plus.dart';
-import 'package:wutsi_mobile/prototype/widget/money.dart';
-import 'package:wutsi_mobile/prototype/widget/password_keyboard.dart';
+import '../widget/money.dart';
+import '../widget/password_keyboard.dart';
 
 ///----------------------------------------------------------------
 /// Send

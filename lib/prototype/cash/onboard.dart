@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
-import 'package:wutsi_mobile/prototype/widget/password_keyboard.dart';
+import '../widget/password_keyboard.dart';
 
 ///----------------------------------------------------------------
 /// Onboard Screen

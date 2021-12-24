@@ -2,16 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:sdui/sdui.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uuid/uuid.dart';
-import 'package:wutsi_mobile/prototype/cash/history.dart';
-import 'package:wutsi_mobile/prototype/cash/home.dart';
-import 'package:wutsi_mobile/prototype/cash/invest.dart';
-import 'package:wutsi_mobile/prototype/cash/onboard.dart';
-import 'package:wutsi_mobile/prototype/cash/qr_code.dart';
-import 'package:wutsi_mobile/prototype/cash/send.dart';
-import 'package:wutsi_mobile/prototype/cash/settings.dart';
-import 'package:wutsi_mobile/prototype/cash/settings_account.dart';
-import 'package:wutsi_mobile/prototype/cash/settings_personal.dart';
-import 'package:wutsi_mobile/prototype/cash/settings_security.dart';
+import 'package:wutsi_wallet_prototype/prototype/pay/terminal_status.dart';
+
+import 'prototype/cash/history.dart';
+import 'prototype/cash/home.dart';
+import 'prototype/cash/invest.dart';
+import 'prototype/cash/onboard.dart';
+import 'prototype/cash/qr_code.dart';
+import 'prototype/cash/send.dart';
+import 'prototype/cash/settings.dart';
+import 'prototype/cash/settings_account.dart';
+import 'prototype/cash/settings_personal.dart';
+import 'prototype/cash/settings_security.dart';
+import 'prototype/pay/terminal.dart';
+import 'prototype/pay/terminal_qr.dart';
 
 bool? onboarded;
 
@@ -26,7 +30,7 @@ void main() async {
 
   onboarded = (await SharedPreferences.getInstance())
       .getBool(HttpOnboardingInterceptor.headerOnboarded);
-  runApp(const MyApp(baseUrl: 'https://wutsi-onboard-bff-test.herokuapp.com'));
+  runApp(const MyApp());
 }
 
 Future<String> _deviceId() async {
@@ -40,16 +44,14 @@ Future<String> _deviceId() async {
 }
 
 class MyApp extends StatelessWidget {
-  final String baseUrl;
-
-  const MyApp({this.baseUrl = '', Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Demo',
       // initialRoute: onboarded == true ? "/" : "/onboard",
-      initialRoute: "/onboard",
+      initialRoute: "/",
       debugShowCheckedModeBanner: false,
       routes: _routes(),
       theme: ThemeData(
@@ -67,9 +69,6 @@ class MyApp extends StatelessWidget {
   Map<String, WidgetBuilder> _routes() => {
         '/': (context) => const HomeScreen(),
         '/error': (context) => const ErrorScreen(),
-        // '/onboard': (context) => DynamicRoute(
-        //     provider:
-        //         HttpRouteContentProvider('$baseUrl/app/onboard/screens/home')),
         '/onboard': (context) => const OnboardScreen(),
         '/onboard/pin': (context) => const OnboardPINScreen(),
         '/onboard/pin/confirm': (context) => const OnboardPINConfirmScreen(),
@@ -104,6 +103,11 @@ class MyApp extends StatelessWidget {
         '/settings/personal': (context) => const SettingsPersonalScreen(),
         '/settings/security': (context) => const SettingsSecurityScreen(),
         '/settings/security/pin': (context) => SettingsSecurityPINScreen(),
+
+        // Terminal for Operator
+        '/terminal': (context) => const TerminalScreen(),
+        '/terminal/qr': (context) => const TerminalQRScreen(),
+        '/terminal/status': (context) => const TerminalStatusScreen(),
       };
 }
 

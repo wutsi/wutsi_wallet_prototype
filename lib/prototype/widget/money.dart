@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:wutsi_mobile/prototype/widget/numeric_keyboard.dart';
+
+import 'numeric_keyboard.dart';
 
 class MoneyText extends StatelessWidget {
   final double value;

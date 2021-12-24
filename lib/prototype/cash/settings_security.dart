@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:wutsi_mobile/prototype/widget/password_keyboard.dart';
+import '../widget/password_keyboard.dart';
 
 class SettingsSecurityScreen extends StatelessWidget {
   const SettingsSecurityScreen({Key? key}) : super(key: key);
