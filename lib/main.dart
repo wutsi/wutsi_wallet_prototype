@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:sdui/sdui.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uuid/uuid.dart';
+import 'package:wutsi_wallet_prototype/prototype/pay/pay.dart';
+import 'package:wutsi_wallet_prototype/prototype/pay/pay_authorize.dart';
+import 'package:wutsi_wallet_prototype/prototype/pay/pay_info.dart';
+import 'package:wutsi_wallet_prototype/prototype/pay/pay_success.dart';
 import 'package:wutsi_wallet_prototype/prototype/pay/terminal_status.dart';
 
 import 'prototype/cash/history.dart';
@@ -104,7 +108,13 @@ class MyApp extends StatelessWidget {
         '/settings/security': (context) => const SettingsSecurityScreen(),
         '/settings/security/pin': (context) => SettingsSecurityPINScreen(),
 
-        // Terminal for Operator
+        // Pay - Vendor
+        '/pay': (context) => const PayScreen(),
+        '/pay/info': (context) => const PayInfoScreen(),
+        '/pay/authorize': (context) => const PayAuthorizeScreen(),
+        '/pay/success': (context) => const PaySuccessScreen(),
+
+        // Pay - Vendor
         '/terminal': (context) => const TerminalScreen(),
         '/terminal/qr': (context) => const TerminalQRScreen(),
         '/terminal/status': (context) => const TerminalStatusScreen(),
