@@ -10,7 +10,7 @@ class TerminalStatusScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: const Text('Cashier'),
+          title: const Text('Payment'),
           centerTitle: true,
           elevation: 0,
           backgroundColor: Colors.white,
@@ -41,12 +41,23 @@ class TerminalStatusScreen extends StatelessWidget {
         children: [
           const Icon(Icons.check_circle, size: 64, color: Color(0xff4CAF50)),
           Container(
+            alignment: Alignment.bottomCenter,
+            padding: const EdgeInsets.all(20),
+            child: const Text(
+              'The payment has successful',
+              style: TextStyle(
+                  color: Color(0xff4CAF50),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18),
+            ),
+          ),
+          Container(
               alignment: Alignment.bottomCenter,
               padding: const EdgeInsets.all(10),
               child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                      child: const Text("OK"),
+                      child: const Text("Close"),
                       onPressed: () => _done(context)))),
         ],
       );
@@ -59,7 +70,7 @@ class TerminalStatusScreen extends StatelessWidget {
           Container(
               padding: const EdgeInsets.all(10),
               child: const Text(
-                'Failure - Insufisant funds',
+                'Failure - Not enough funds',
                 style: TextStyle(
                     color: Color(0xff8B0000),
                     fontSize: 18,

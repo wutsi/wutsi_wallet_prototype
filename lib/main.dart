@@ -6,6 +6,7 @@ import 'package:wutsi_wallet_prototype/prototype/pay/pay.dart';
 import 'package:wutsi_wallet_prototype/prototype/pay/pay_authorize.dart';
 import 'package:wutsi_wallet_prototype/prototype/pay/pay_info.dart';
 import 'package:wutsi_wallet_prototype/prototype/pay/pay_success.dart';
+import 'package:wutsi_wallet_prototype/prototype/pay/terminal_authorize.dart';
 import 'package:wutsi_wallet_prototype/prototype/pay/terminal_status.dart';
 
 import 'prototype/cash/history.dart';
@@ -116,6 +117,7 @@ class MyApp extends StatelessWidget {
 
         // Pay - Vendor
         '/terminal': (context) => const TerminalScreen(),
+        '/terminal/authorize': (context) => const TerminalAuthorizeScreen(),
         '/terminal/qr': (context) => const TerminalQRScreen(),
         '/terminal/status': (context) => const TerminalStatusScreen(),
       };

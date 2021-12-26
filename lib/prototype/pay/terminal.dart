@@ -12,7 +12,7 @@ class TerminalScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: const Text('Cashier'),
+          title: const Text('Payment'),
           centerTitle: true,
           backgroundColor: Theme.of(context).primaryColor,
           elevation: 0,
@@ -35,7 +35,7 @@ class TerminalScreen extends StatelessWidget {
                   child: ElevatedButton(
                     child: const Text("Submit"),
                     onPressed: () =>
-                        Navigator.pushNamed(context, '/terminal/qr'),
+                        Navigator.pushNamed(context, '/terminal/status'),
                   ))),
         ]),
       );

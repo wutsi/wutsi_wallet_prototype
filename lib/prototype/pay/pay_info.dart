@@ -18,6 +18,22 @@ class PayInfoScreen extends StatelessWidget {
         body: Column(children: [
           Container(padding: const EdgeInsets.all(20)),
           Container(
+            alignment: Alignment.center,
+            child: Image.asset(
+              'assets/images/vendor.png',
+              width: 64,
+              height: 64,
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(10),
+            alignment: Alignment.center,
+            child: const Text(
+              'Maison H',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Container(
             alignment: Alignment.bottomCenter,
             padding: const EdgeInsets.all(20),
             child: const MoneyText(
@@ -25,37 +41,13 @@ class PayInfoScreen extends StatelessWidget {
               currency: 'CFA',
             ),
           ),
-          const Text('To', style: TextStyle(fontSize: 18)),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                padding: const EdgeInsets.all(10),
-                alignment: Alignment.center,
-                child: Image.asset(
-                  'assets/images/vendor.png',
-                  width: 32,
-                  height: 32,
-                ),
-              ),
-              Container(
-                padding: const EdgeInsets.all(10),
-                alignment: Alignment.center,
-                child: const Text(
-                  'Maison H',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ],
-          ),
           Container(
               alignment: Alignment.bottomCenter,
               padding: const EdgeInsets.all(20),
               child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    child: const Text("Pay"),
+                    child: const Text("Approve Payment"),
                     onPressed: () =>
                         Navigator.pushNamed(context, '/pay/authorize'),
                   ))),

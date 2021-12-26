@@ -1,14 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:wutsi_wallet_prototype/prototype/widget/password_keyboard.dart';
 
-class PayScreen extends StatelessWidget {
-  const PayScreen({Key? key}) : super(key: key);
+class TerminalAuthorizeScreen extends StatelessWidget {
+  const TerminalAuthorizeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: const Text('Pay'),
+          title: const Text('Authorization'),
           centerTitle: true,
           backgroundColor: Colors.white,
           foregroundColor: Colors.black,
@@ -16,22 +17,12 @@ class PayScreen extends StatelessWidget {
         ),
         body: Column(children: [
           Container(
-            alignment: Alignment.center,
-            padding: const EdgeInsets.all(20),
-            child: const Text(
-              'Scan the QR Code',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 18),
-            ),
-          ),
+              padding: const EdgeInsets.all(20),
+              child: const Text('Enter your NIP to proceed the payment')),
           Container(
+            alignment: Alignment.bottomCenter,
             padding: const EdgeInsets.all(20),
-            alignment: Alignment.center,
-            child: Image.asset(
-              'assets/images/qr-code-300.png',
-              width: 300,
-              height: 300,
-            ),
+            child: const PasswordKeyboard(),
           ),
           Container(
               alignment: Alignment.bottomCenter,
@@ -39,8 +30,8 @@ class PayScreen extends StatelessWidget {
               child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    child: const Text("OK"),
-                    onPressed: () => Navigator.pushNamed(context, '/pay/info'),
+                    child: const Text("Submit"),
+                    onPressed: () => Navigator.pushNamed(context, '/terminal'),
                   ))),
         ]),
       );

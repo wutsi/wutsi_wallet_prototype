@@ -10,7 +10,7 @@ class TerminalQRScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: const Text('Cashier'),
+          title: const Text('Payment'),
           centerTitle: true,
           backgroundColor: Colors.white,
           foregroundColor: Colors.black,

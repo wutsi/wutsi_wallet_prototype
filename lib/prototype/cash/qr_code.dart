@@ -16,10 +16,10 @@ class QRCodeScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         foregroundColor:
             Theme.of(context).textTheme.bodyText1?.color ?? Colors.black,
-        actions: [
-          IconButton(
-              onPressed: () => _share(), icon: const Icon(Icons.ios_share))
-        ],
+        // actions: [
+        //   IconButton(
+        //       onPressed: () => _share(), icon: const Icon(Icons.ios_share))
+        // ],
       ),
       body: Container(
           alignment: Alignment.center,

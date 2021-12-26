@@ -18,6 +18,22 @@ class PaySuccessScreen extends StatelessWidget {
         body: Column(children: [
           Container(padding: const EdgeInsets.all(20)),
           Container(
+            alignment: Alignment.center,
+            child: Image.asset(
+              'assets/images/vendor.png',
+              width: 64,
+              height: 64,
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(10),
+            alignment: Alignment.center,
+            child: const Text(
+              'Maison H',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ),
+          Container(
             alignment: Alignment.bottomCenter,
             padding: const EdgeInsets.all(20),
             child: const MoneyText(
@@ -25,34 +41,21 @@ class PaySuccessScreen extends StatelessWidget {
               currency: 'CFA',
             ),
           ),
-          const Text('To', style: TextStyle(fontSize: 18)),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                padding: const EdgeInsets.all(10),
-                alignment: Alignment.center,
-                child: Image.asset(
-                  'assets/images/vendor.png',
-                  width: 32,
-                  height: 32,
-                ),
-              ),
-              Container(
-                padding: const EdgeInsets.all(10),
-                alignment: Alignment.center,
-                child: const Text(
-                  'Maison H',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ],
-          ),
           Container(
             padding: const EdgeInsets.all(10),
             child: const Icon(Icons.check_circle,
                 size: 64, color: Color(0xff4CAF50)),
+          ),
+          Container(
+            alignment: Alignment.bottomCenter,
+            padding: const EdgeInsets.all(20),
+            child: const Text(
+              'The payment has successful',
+              style: TextStyle(
+                  color: Color(0xff4CAF50),
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18),
+            ),
           ),
           Container(
               alignment: Alignment.bottomCenter,
@@ -60,7 +63,7 @@ class PaySuccessScreen extends StatelessWidget {
               child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    child: const Text("OK"),
+                    child: const Text("Close"),
                     onPressed: () => _done(context),
                   ))),
         ]),
